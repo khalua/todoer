@@ -1,33 +1,21 @@
 <form action="/add" method="post">
-  Task:
+  <p>Task:</p>
+  <input type="text" name="name" size="28" autofocus>
   <br>
-  <input type="text" name="name" autofocus>
+  <p>Description:</p>
+  <textarea rows="3" cols="28" name="description"></textarea>
   <br>
-  Description:
-  <br>
-  <textarea rows="5" cols="30" name="description"></textarea>
   <button>Add</button>
 </form>
 
 <% if @rows.present? %>
 
 <div id="yellow_pad">
-
-
-<div id="table_box">
-  <table>
-      <tr>
-      <th>Task</th>
-      <th>Description</th>
-    </tr>
+  <div id="the_list">
       <% @rows.each do |row| %>
-      <tr>
-      <td><%= row['name'] %></td>
-      <td><%= row['description'] %></td>
-     </tr>
+        <p><span class='underline'><%= row['name'] %></span> -- <%= row['description'] %></p>
        <% end %>
+     </div>
+</div>
 
-  </table>
-</div>
-</div>
 <% end %>

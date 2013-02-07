@@ -1,51 +1,104 @@
+@import url(http://fonts.googleapis.com/css?family=Cedarville+Cursive);
+@import url(http://fonts.googleapis.com/css?family=ABeeZee);
+
+body {
+  background-color: #f1e7a0;
+}
+
 #container {
-  width: 800px;
-  height: 1400px;
-  background-color: black;
+  width: 888px;
+  height: 900px;
+  background-color: #2b2b2b;
   margin-left: auto;
   margin-right: auto;
 
 }
 
 #contents {
-  width:700px;
-  padding: 0px 10px 0 10px;
+  width:880px;
+  /*padding: 0px 10px 0 10px;*/
   margin: 0px auto 0px auto;
-  background-color: white;
-  height: 1400px;
+    background: url('low_contrast_linen.png');
+  height: 900px;
 
 }
 
 #yellow_pad {
-  background: url('yellowpad.jpg') no-repeat;
+  -webkit-transform:rotate(8deg);
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  background: url('yellowpad.jpg');
+  height: 615px;
+  width: 445px;
 }
 
 header {
+  background-color: #ededed;
+  border-top:20px solid #d2202c;
+  border-bottom: 3px groove #f1e7a0;
   font-size: 100px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
+  font-family: 'ABeeZee', sans-serif;
+
 }
 
 form {
+  float: left;
   padding: 10px;
   font-size: 15px;
 }
 
-/*#table_box {
-  margin: 50px auto 0px auto;
-}
-*/
-
-table{
-  width: 380px;
-}
-
-td,th {
-border: 1px solid  black;
-padding: 5px;
-}
-
-th {
-  background-color: black;
+form p {
+  font-family: 'ABeeZee', sans-serif;
+  line-height: 12px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 12px;
   color: white;
-  text-align: left;
 }
+
+input,textarea {
+  font-size: 18px;
+  color: #1a34b1;
+  background-color: #f1e7a0;
+  padding: 2px;
+  font-family: 'Cedarville Cursive', cursive;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #d2202c;
+  color: white;
+  padding:10px;
+  border-radius: 5px
+}
+
+#the_list {
+  position: relative;
+  line-height: 30px;
+  top: 110px;
+  left: 10px;
+  font-size: 22px;
+  font-family: 'Cedarville Cursive', cursive;
+  margin-right: 10px;
+  color: #1a34b1
+}
+
+#the_list .underline {
+  text-decoration: underline;
+}
+footer p {
+  font-size: 10px;
+  border-top: 1px solid #2b2b2b;
+  background: url('low_contrast_linen.png');
+  font-family: 'ABeeZee', sans-serif;
+  padding-left: 5px;
+  line-height:25px;
+  color: white;
+  text-decoration: none;
+}
+
+footer a:link,a:hover,a:visited {
+  color: white;
+};
