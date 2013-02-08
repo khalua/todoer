@@ -9,8 +9,8 @@ get '/' do
 end
 
 post '/add' do
-  @name = params[:name]
-  @description = params[:description]
+  @name = params[:name].gsub("'","")
+  @description = params[:description].gsub("'","")
 
   sql = "insert into todo (name, description) values ('#{@name}', '#{@description}');"
 
