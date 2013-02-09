@@ -11,28 +11,20 @@ end
 post '/add' do
   @name = params[:name].gsub("'","")
   @description = params[:description].gsub("'","")
-
   sql = "insert into todo (name, description) values ('#{@name}', '#{@description}');"
-
-  conn = PG.connect(:dbname =>'todo', :host => 'localhost')
-  conn.exec(sql)
-  conn.close
-
-  redirect "/view"
-
-
+  run_sql(sql)
+  redirect to ("/view")
 end
 
 get '/view' do
   sql = "select name, description from todo;"
-
-  conn = PG.connect(:dbname =>'todo', :host => 'localhost')
-  @rows = conn.exec(sql)
-  #binding.pry
-  conn.close
-
-
+  @rows = run_sql(sql)
   erb :home
-
 end
 
+def run_sql(sql)
+  conn = PG.connect(:dbname =>'todo', :host => 'localhost')
+  result = conn.exec(sql)
+  conn.close
+  result
+end
